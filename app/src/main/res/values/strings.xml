@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">Trabalho_Final</string>
+    <string name="app_name">GAMES LOGGER</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="etLogin">login</string>
+    <string name="etPassword">Password</string>
+    <string name="cbConectado">Mantenha-me conectado</string>
+    <string name="btLogin">Login</string>
 </resources>

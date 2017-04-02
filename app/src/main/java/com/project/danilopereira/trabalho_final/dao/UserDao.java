@@ -47,7 +47,7 @@ public class UserDao {
     public User findByUsernameAndPassword(String name, String password){
         db = openHelper.getReadableDatabase();
         String[] columns = {COLUNA_ID, COLUNA_NAME};
-        String where = "name = " + name + " and passwod = " + password;
+        String where = "name = '" + name + "' and password = '" + password + "'";
         Cursor cursor = db.query(true, TABLE_USER, columns, where, null, null, null, null, null);
 
         User user = null;
