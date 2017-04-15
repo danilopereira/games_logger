@@ -87,5 +87,14 @@ public class GameDao {
     }
 
     public void update(Game game) {
+        db = openHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_COVER, game.getCover());
+        values.put(COLUMN_NAME, game.getName());
+        values.put(COLUMN_CATEGORY_ID, game.getCategory().getId());
+
+        db.update(TABLE_GAME, values, "id="+game.getId(), null);
+
+        db.close();
     }
 }

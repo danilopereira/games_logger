@@ -75,35 +75,46 @@ public class InsertActivity extends AppCompatActivity {
         });
 
 
-//        Bundle bundle = getIntent().getExtras();
-//        final Game game = (Game)bundle.get("game");
-//        if(game != null){
-//            ivCover.setImageBitmap(BitmapFactory
-//                    .decodeFile(game.getCover()));
-//            tilName.getEditText().setText(game.getName());
-//
-//            btnSave.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    gameDao.update(game);
-//                }
-//            });
-//        }
-//        else{
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            final Game game = (Game)bundle.get("game");
+            ivCover.setImageBitmap(BitmapFactory
+                    .decodeFile(game.getCover()));
+            tilName.getEditText().setText(game.getName());
 
-//        }
+            btnSave.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    updateGame(game);
+                }
+            });
+
+        }
+
+    }
+
+    private void updateGame(Game game) {
+        insertValues(game);
+        gameDao.update(game);
+
+        backToLastScreen();
     }
 
     private void saveGame() {
         Game game = new Game();
-
-        game.setCover(imgDecodableString);
-        game.setName(tilName.getEditText().getText().toString());
-        game.setCategory(categoryDao.findById(((Category)spCategory.getSelectedItem()).getId()));
+        insertValues(game);
 
         gameDao.add(game);
 
         backToLastScreen();
+    }
+
+    private void insertValues(Game game){
+        if(imgDecodableString != null){
+            game.setCover(imgDecodableString);
+        }
+        game.setName(tilName.getEditText().getText().toString());
+        game.setCategory(categoryDao.findById(((Category)spCategory.getSelectedItem()).getId()));
     }
 
     private void backToLastScreen() {

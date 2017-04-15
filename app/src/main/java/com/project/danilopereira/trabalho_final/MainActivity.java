@@ -70,6 +70,9 @@ public class MainActivity extends AppCompatActivity
         else if(resultCode == InsertActivity.CODE_NEW_GAME){
             loadGamesList();
         }
+        else{
+            loadGamesList();
+        }
     }
 
     private void loadGamesList() {
@@ -105,14 +108,12 @@ public class MainActivity extends AppCompatActivity
                             case R.id.menu_edit:
                                 Intent intent = new Intent(MainActivity.this, InsertActivity.class);
                                 intent.putExtra("game", game);
-                                startActivity(intent);
+                                startActivityForResult(intent, 1);
                                 break;
                         }
 
                         if (retorno > 0) {
                             Toast.makeText(getApplicationContext(), "Deleted Successfully", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Not possible to delete", Toast.LENGTH_LONG).show();
                         }
 
                         games.remove(position);

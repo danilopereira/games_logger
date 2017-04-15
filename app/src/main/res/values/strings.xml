@@ -16,4 +16,6 @@
     <string name="menu_exluir">Delete</string>
     <string name="edit">Edit</string>
     <string name="menu_delete">Delete</string>
+    <string name="info_developer">Developed by Danilo Pereira</string>
+    <string name="info_app_version">Version 1.0.0</string>
 </resources>
