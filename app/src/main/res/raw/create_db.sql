@@ -12,6 +12,7 @@ CREATE TABLE category(
 CREATE TABLE game(
     id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
     name varchar(255) NOT NULL,
+    cover varchar(255) NOT NULL,
     category_id integer NOT NULL,
     FOREIGN KEY (category_id) REFERENCES category(id)
 );

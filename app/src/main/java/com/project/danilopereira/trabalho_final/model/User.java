@@ -12,6 +12,28 @@ public class User implements Parcelable{
     private String name;
     private String password;
 
+    protected User(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        password = in.readString();
+    }
+
+    public User(){
+
+    }
+
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
+
     public int getId() {
         return id;
     }
@@ -43,6 +65,8 @@ public class User implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-
+        dest.writeInt(id);
+        dest.writeString(name);
+        dest.writeString(password);
     }
 }

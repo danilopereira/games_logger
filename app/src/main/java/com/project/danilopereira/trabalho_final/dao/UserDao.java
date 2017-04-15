@@ -14,9 +14,9 @@ import com.project.danilopereira.trabalho_final.model.User;
 
 public class UserDao {
     public static final String TABLE_USER = "`user`";
-    public static final String COLUNA_ID = "id";
-    public static final String COLUNA_NAME = "name";
-    public static final String COLUNA_PASSWORD = "password";
+    public static final String COLUMN_ID = "id";
+    public static final String COLUMN_NAME = "name";
+    public static final String COLUMN_PASSWORD = "password";
 
     private SQLiteDatabase db;
     private DBOpenHelper openHelper;
@@ -30,8 +30,8 @@ public class UserDao {
         db = openHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(COLUNA_NAME, user.getName());
-        values.put(COLUNA_PASSWORD, user.getPassword());
+        values.put(COLUMN_NAME, user.getName());
+        values.put(COLUMN_PASSWORD, user.getPassword());
 
         resultado = db.insert(TABLE_USER, null, values);
 
@@ -46,7 +46,7 @@ public class UserDao {
 
     public User findByUsernameAndPassword(String name, String password){
         db = openHelper.getReadableDatabase();
-        String[] columns = {COLUNA_ID, COLUNA_NAME};
+        String[] columns = {COLUMN_ID, COLUMN_NAME};
         String where = "name = '" + name + "' and password = '" + password + "'";
         Cursor cursor = db.query(true, TABLE_USER, columns, where, null, null, null, null, null);
 
@@ -56,8 +56,8 @@ public class UserDao {
             cursor.moveToFirst();
 
             user = new User();
-            user.setId(cursor.getInt(cursor.getColumnIndex(COLUNA_ID)));
-            user.setName(cursor.getString(cursor.getColumnIndex(COLUNA_NAME)));
+            user.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
+            user.setName(cursor.getString(cursor.getColumnIndex(COLUMN_NAME)));
         }
 
         return user;
