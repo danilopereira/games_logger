@@ -5,18 +5,18 @@
         <item
             android:id="@+id/nav_create_game"
             android:icon="@android:drawable/ic_menu_save"
-            android:title="Create Game Log" />
+            android:title="@string/create_game_log" />
         <item
             android:id="@+id/nav_view_games"
             android:icon="@android:drawable/ic_menu_agenda"
-            android:title="View Games" />
+            android:title="@string/view_games" />
         <item
             android:id="@+id/nav_info"
             android:icon="@android:drawable/ic_menu_info_details"
-            android:title="Info" />
+            android:title="@string/info" />
         <item
             android:id="@+id/nav_exit_app"
             android:icon="@android:drawable/ic_menu_revert"
-            android:title="Exit" />
+            android:title="@string/exit" />
     </group>
 </menu>

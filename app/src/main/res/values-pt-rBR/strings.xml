@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">GAMES LOGGER</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="etLogin">login</string>
+    <string name="etPassword">Senha</string>
+    <string name="cbConectado">Mantenha-me conectado</string>
+    <string name="btLogin">Login</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="game_name">Nome do Jogo</string>
+    <string name="save">Salvar</string>
+    <string name="menu_exluir">Excluir</string>
+    <string name="edit">Editar</string>
+    <string name="menu_delete">Excluir</string>
+    <string name="info_developer">Desenvolvido por Danilo Pereira</string>
+    <string name="info_app_version">Versão 1.0.0</string>
+    <string name="create_game_log">Criar Registro de Jogo</string>
+    <string name="view_games">Visualizar Jogos</string>
+    <string name="info">Informações</string>
+    <string name="exit">Sair</string>
+</resources>
