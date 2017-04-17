@@ -22,4 +22,5 @@
     <string name="view_games">Visualizar Jogos</string>
     <string name="info">Informações</string>
     <string name="exit">Sair</string>
+    <string name="cover_tip">Clique na imagem para inserir uma capa</string>
 </resources>

@@ -35,11 +35,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/spCategory"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cover_tip"
+        android:textSize="12dp"
+        android:textAlignment="center"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnSave"
-        android:text="@string/save"/>
+        android:text="@string/save"
+        />
 
 
 
